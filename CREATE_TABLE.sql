@@ -200,3 +200,12 @@ alter table subject_prerequisite add constraint FK_SUBJECT__REFERENCE_SUBJECT_PR
 
 alter table teacher add constraint FK_TEACHER_REFERENCE_DEPARTME foreign key (dprt_id)
       references department (dprt_id) on delete restrict on update restrict;
+
+CREATE TABLE password_t (
+    id      INTEGER PRIMARY KEY AUTO_INCREMENT,  -- 改用 id，并设置自动增长
+    account VARCHAR(30) NOT NULL UNIQUE,        -- 不允许为空，且必须唯一！
+    psw     VARCHAR(30) NOT NULL,               -- 密码不能为空
+    role    INT CHECK (role BETWEEN 0 AND 2)    -- 0:学生, 1:教师, 2:管理员
+);
+
+Insert into password_t (account, psw, role) VALUES ('admin', 'admin', 2);
