@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>966</width>
+    <height>555</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4" stretch=""/>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="mainUi">
+        <property name="minimumSize">
+         <size>
+          <width>600</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="login_page">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QFrame" name="loginCard">
+              <property name="focusPolicy">
+               <enum>Qt::FocusPolicy::ClickFocus</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QFrame#loginCard {
+    background-color: #rgb(57, 57, 5rgb(41, 41, 41)7);   /* 灰色 */
+    /*border: 1px solid #e5e5ea;    浅灰边框 */
+    border-radius: 15px;         /* 圆角 */
+}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Shadow::Raised</enum>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_13" stretch="1,2">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <item>
+                  <widget class="QLabel" name="label_9">
+                   <property name="font">
+                    <font>
+                     <pointsize>36</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(69, 255, 193)</string>
+                   </property>
+                   <property name="text">
+                    <string>教务系统</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_3">
+                   <property name="font">
+                    <font>
+                     <pointsize>14</pointsize>
+                     <strikeout>false</strikeout>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(149, 149, 149)</string>
+                   </property>
+                   <property name="lineWidth">
+                    <number>1</number>
+                   </property>
+                   <property name="text">
+                    <string>Hello! Please Log in before using.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QFrame" name="inputFrame">
+                 <property name="styleSheet">
+                  <string notr="true">/* 使用 ID 选择器，只针对这一个框修改 */
+QFrame#inputFrame {
+    /* 核心属性：圆角半径 */
+    border-radius: 20px;   /* 试着改成 20px, 25px 或 30px 直到你满意 */
+    
+    /* 保持你原本的背景色 (这里假设是深灰，你自己根据需要调整) */
+    background-color: #383838; 
+    
+    /* 可选：如果你想要它不贴着边，可以加点边距 */
+    /* margin: 10px; */
+}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_15">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_6">
+                    <item>
+                     <spacer name="horizontalSpacer_3">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="login_student">
+                      <property name="focusPolicy">
+                       <enum>Qt::FocusPolicy::NoFocus</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">/* === 身份选择按钮 (胶囊式 - 渐变光感版) === */
+
+/* 1. 基础样式 */
+QPushButton {
+    border: none;
+    background-color: transparent; /* 【起点】默认背景完全透明 */
+    color: #aaaaaa;             /* 默认文字颜色（浅灰） */
+    font-weight: bold;
+    font-size: 16px;
+
+    /* === 保持之前的尺寸设置，确保胶囊够大 === */
+    border-radius: 22px;        /* 大圆角形成胶囊 */
+    padding: 12px 30px;         /* 内边距撑大点击区域 */
+    margin: 0 10px;             /* 按钮之间的间距 */
+}
+
+/* 2. 鼠标悬停 (Hover) - 显示浅色胶囊 */
+QPushButton:hover {
+    /* 【关键】使用半透明的白色 */
+    /* rgba(255, 255, 255, 0.15) 意思是：白色，但只有 15% 的不透明度 */
+    /* 在深色背景上，这会看起来像一层淡淡的浅灰色光雾 */
+    background-color: rgba(255, 255, 255, 0.15);
+    
+    color: #ffffff;             /* 文字变白 */
+}
+
+/* 3. 选中状态 (Checked) - 变得更浅 (更亮) */
+QPushButton:checked {
+    /* 【关键】增加不透明度 */
+    /* 将透明度提高到 35%，背景看起来就更亮、更“浅”了 */
+    background-color: rgba(255, 255, 255, 0.35);
+    
+    color: #ffffff;             /* 文字保持纯白 */
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Student</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="login_teacher">
+                      <property name="focusPolicy">
+                       <enum>Qt::FocusPolicy::NoFocus</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">/* === 身份选择按钮 (胶囊式 - 渐变光感版) === */
+
+/* 1. 基础样式 */
+QPushButton {
+    border: none;
+    background-color: transparent; /* 【起点】默认背景完全透明 */
+    color: #aaaaaa;             /* 默认文字颜色（浅灰） */
+    font-weight: bold;
+    font-size: 16px;
+
+    /* === 保持之前的尺寸设置，确保胶囊够大 === */
+    border-radius: 22px;        /* 大圆角形成胶囊 */
+    padding: 12px 30px;         /* 内边距撑大点击区域 */
+    margin: 0 10px;             /* 按钮之间的间距 */
+}
+
+/* 2. 鼠标悬停 (Hover) - 显示浅色胶囊 */
+QPushButton:hover {
+    /* 【关键】使用半透明的白色 */
+    /* rgba(255, 255, 255, 0.15) 意思是：白色，但只有 15% 的不透明度 */
+    /* 在深色背景上，这会看起来像一层淡淡的浅灰色光雾 */
+    background-color: rgba(255, 255, 255, 0.15);
+    
+    color: #ffffff;             /* 文字变白 */
+}
+
+/* 3. 选中状态 (Checked) - 变得更浅 (更亮) */
+QPushButton:checked {
+    /* 【关键】增加不透明度 */
+    /* 将透明度提高到 35%，背景看起来就更亮、更“浅”了 */
+    background-color: rgba(255, 255, 255, 0.35);
+    
+    color: #ffffff;             /* 文字保持纯白 */
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Teacher</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="login_admin">
+                      <property name="focusPolicy">
+                       <enum>Qt::FocusPolicy::NoFocus</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">/* === 身份选择按钮 (胶囊式 - 渐变光感版) === */
+
+/* 1. 基础样式 */
+QPushButton {
+    border: none;
+    background-color: transparent; /* 【起点】默认背景完全透明 */
+    color: #aaaaaa;             /* 默认文字颜色（浅灰） */
+    font-weight: bold;
+    font-size: 16px;
+
+    /* === 保持之前的尺寸设置，确保胶囊够大 === */
+    border-radius: 22px;        /* 大圆角形成胶囊 */
+    padding: 12px 30px;         /* 内边距撑大点击区域 */
+    margin: 0 10px;             /* 按钮之间的间距 */
+}
+
+/* 2. 鼠标悬停 (Hover) - 显示浅色胶囊 */
+QPushButton:hover {
+    /* 【关键】使用半透明的白色 */
+    /* rgba(255, 255, 255, 0.15) 意思是：白色，但只有 15% 的不透明度 */
+    /* 在深色背景上，这会看起来像一层淡淡的浅灰色光雾 */
+    background-color: rgba(255, 255, 255, 0.15);
+    
+    color: #ffffff;             /* 文字变白 */
+}
+
+/* 3. 选中状态 (Checked) - 变得更浅 (更亮) */
+QPushButton:checked {
+    /* 【关键】增加不透明度 */
+    /* 将透明度提高到 35%，背景看起来就更亮、更“浅”了 */
+    background-color: rgba(255, 255, 255, 0.35);
+    
+    color: #ffffff;             /* 文字保持纯白 */
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Admin</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_4">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_7">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_8">
+                    <item>
+                     <spacer name="horizontalSpacer_5">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <layout class="QVBoxLayout" name="verticalLayout_12">
+                      <item>
+                       <widget class="QLabel" name="label_8">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Account:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLabel" name="label_7">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Password:</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QVBoxLayout" name="verticalLayout_11">
+                      <item>
+                       <widget class="QLineEdit" name="lineEdit_Account">
+                        <property name="minimumSize">
+                         <size>
+                          <width>400</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>500</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignmentFlag::AlignCenter</set>
+                        </property>
+                        <property name="placeholderText">
+                         <string>请选择登录的身份</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEdit_Psw">
+                        <property name="minimumSize">
+                         <size>
+                          <width>400</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>500</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignmentFlag::AlignCenter</set>
+                        </property>
+                        <property name="placeholderText">
+                         <string>请输入密码</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_6">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Policy::Expanding</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>905</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                   <widget class="QPushButton" name="log_in">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>200</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Log in</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_0"/>
+        <widget class="QWidget" name="page_student_welcome">
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QStackedWidget" name="stack_student">
+            <widget class="QWidget" name="student_HomePage">
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item>
+               <widget class="QFrame" name="frame">
+                <property name="frameShape">
+                 <enum>QFrame::Shape::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_17">
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_16" stretch="1,4">
+                   <item>
+                    <widget class="QLabel" name="label">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>400</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>22</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(132, 44, 255)</string>
+                     </property>
+                     <property name="text">
+                      <string>Student's Dashboard</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <layout class="QGridLayout" name="gridLayout">
+                     <item row="1" column="1">
+                      <widget class="QToolButton" name="btn_Schedule">
+                       <property name="minimumSize">
+                        <size>
+                         <width>300</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">/* === 1. 默认状态 (静止) === */
+QToolButton {
+    background-color: transparent; /* 背景透明 */
+    border: 1px solid transparent; /* 边框透明占位 */
+    border-radius: 15px;
+    
+    color: #a0a0a0;                /* 浅灰色字体 */
+    
+    font-size: 12pt;               /* 【修改】这里改用 pt，修复报错 */
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* === 2. 鼠标悬浮状态 (Hover) === */
+QToolButton:hover {
+    background-color: transparent; 
+    border: 2px solid #409eff;     /* 悬浮时显示亮蓝色框 */
+    
+    color: #409eff;                /* 悬浮时字体变亮蓝 (适配白底) */
+    /* 如果你的背景是深色的，把上面两个颜色改成 #ffffff (白色) */
+}
+
+/* === 3. 鼠标按下状态 (Pressed) === */
+QToolButton:pressed {
+    background-color: rgba(0, 0, 0, 0.05); /* 按下显示淡淡的灰色阴影 */
+    border: 2px solid #a0a0a0;             /* 边框变灰 */
+    color: #333333;                        /* 字体变深灰 */
+}</string>
+                       </property>
+                       <property name="text">
+                        <string>我的课表</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QToolButton" name="btn_Info">
+                       <property name="minimumSize">
+                        <size>
+                         <width>300</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">/* === 1. 默认状态 (静止) === */
+QToolButton {
+    background-color: transparent; /* 背景透明 */
+    border: 1px solid transparent; /* 边框透明占位 */
+    border-radius: 15px;
+    
+    color: #a0a0a0;                /* 浅灰色字体 */
+    
+    font-size: 12pt;               /* 【修改】这里改用 pt，修复报错 */
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* === 2. 鼠标悬浮状态 (Hover) === */
+QToolButton:hover {
+    background-color: transparent; 
+    border: 2px solid #409eff;     /* 悬浮时显示亮蓝色框 */
+    
+    color: #409eff;                /* 悬浮时字体变亮蓝 (适配白底) */
+    /* 如果你的背景是深色的，把上面两个颜色改成 #ffffff (白色) */
+}
+
+/* === 3. 鼠标按下状态 (Pressed) === */
+QToolButton:pressed {
+    background-color: rgba(0, 0, 0, 0.05); /* 按下显示淡淡的灰色阴影 */
+    border: 2px solid #a0a0a0;             /* 边框变灰 */
+    color: #333333;                        /* 字体变深灰 */
+}</string>
+                       </property>
+                       <property name="text">
+                        <string>个人信息</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QToolButton" name="btn_CourseSelect">
+                       <property name="minimumSize">
+                        <size>
+                         <width>300</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">/* === 1. 默认状态 (静止) === */
+QToolButton {
+    background-color: transparent; /* 背景透明 */
+    border: 1px solid transparent; /* 边框透明占位 */
+    border-radius: 15px;
+    
+    color: #a0a0a0;                /* 浅灰色字体 */
+    
+    font-size: 12pt;               /* 【修改】这里改用 pt，修复报错 */
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* === 2. 鼠标悬浮状态 (Hover) === */
+QToolButton:hover {
+    background-color: transparent; 
+    border: 2px solid #409eff;     /* 悬浮时显示亮蓝色框 */
+    
+    color: #409eff;                /* 悬浮时字体变亮蓝 (适配白底) */
+    /* 如果你的背景是深色的，把上面两个颜色改成 #ffffff (白色) */
+}
+
+/* === 3. 鼠标按下状态 (Pressed) === */
+QToolButton:pressed {
+    background-color: rgba(0, 0, 0, 0.05); /* 按下显示淡淡的灰色阴影 */
+    border: 2px solid #a0a0a0;             /* 边框变灰 */
+    color: #333333;                        /* 字体变深灰 */
+}</string>
+                       </property>
+                       <property name="text">
+                        <string>选课中心</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QToolButton" name="btn_Grade">
+                       <property name="minimumSize">
+                        <size>
+                         <width>300</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">/* === 1. 默认状态 (静止) === */
+QToolButton {
+    background-color: transparent; /* 背景透明 */
+    border: 1px solid transparent; /* 边框透明占位 */
+    border-radius: 15px;
+    
+    color: #a0a0a0;                /* 浅灰色字体 */
+    
+    font-size: 12pt;               /* 【修改】这里改用 pt，修复报错 */
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* === 2. 鼠标悬浮状态 (Hover) === */
+QToolButton:hover {
+    background-color: transparent; 
+    border: 2px solid #409eff;     /* 悬浮时显示亮蓝色框 */
+    
+    color: #409eff;                /* 悬浮时字体变亮蓝 (适配白底) */
+    /* 如果你的背景是深色的，把上面两个颜色改成 #ffffff (白色) */
+}
+
+/* === 3. 鼠标按下状态 (Pressed) === */
+QToolButton:pressed {
+    background-color: rgba(0, 0, 0, 0.05); /* 按下显示淡淡的灰色阴影 */
+    border: 2px solid #a0a0a0;             /* 边框变灰 */
+    color: #333333;                        /* 字体变深灰 */
+}</string>
+                       </property>
+                       <property name="text">
+                        <string>成绩查询</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <item>
+                 <widget class="QPushButton" name="log_info_button">
+                  <property name="minimumSize">
+                   <size>
+                    <width>170</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>已登录: (学号)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="student_selection">
+             <layout class="QVBoxLayout" name="verticalLayout_19"/>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_teacher_welcome">
+         <layout class="QVBoxLayout" name="verticalLayout_6"/>
+        </widget>
+        <widget class="QWidget" name="page_admin_dashboard">
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>学生管理页面</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item>
+                 <widget class="QLineEdit" name="lineEdit_Search">
+                  <property name="minimumSize">
+                   <size>
+                    <width>100</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>4000</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_query">
+                  <property name="minimumSize">
+                   <size>
+                    <width>150</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Query</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_more">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>50</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>...</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="tableWidget">
+              <property name="columnCount">
+               <number>3</number>
+              </property>
+              <column/>
+              <column/>
+              <column/>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QPushButton" name="pushButton_add">
+              <property name="text">
+               <string>添加学生</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="text">
+               <string>编辑学生信息</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_delete">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 0, 0)</string>
+              </property>
+              <property name="text">
+               <string>删除学生</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_logs">
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>日志文件将会显示在此处</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>966</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionUser_manual"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>System</string>
+    </property>
+    <addaction name="actionLog_out"/>
+    <addaction name="actionRestart"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionInfo">
+   <property name="text">
+    <string>Info</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionLog_out">
+   <property name="text">
+    <string>Log out</string>
+   </property>
+  </action>
+  <action name="actionUser_manual">
+   <property name="text">
+    <string>User manual</string>
+   </property>
+  </action>
+  <action name="actionRestart">
+   <property name="text">
+    <string>Restart</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
