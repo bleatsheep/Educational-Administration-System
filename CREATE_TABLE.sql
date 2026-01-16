@@ -1,5 +1,30 @@
 CREATE DATABASE IF NOT EXISTS SCHOOL CHARACTER SET utf8mb4;
 USE SCHOOL;
+
+drop table if exists student_course_choice;
+
+drop table if exists subject_prerequisite;
+
+drop table if exists section_schedule;
+
+drop table if exists course_credits;
+
+drop table if exists course_section;
+
+drop table if exists semester;
+
+drop table if exists student;
+
+drop table if exists subject;
+
+drop table if exists teacher;
+
+drop table if exists administrative_class;
+
+drop table if exists department;
+
+drop table if exists college;
+
 /*==============================================================*/
 /* Table: administrative_class                                  */
 /*==============================================================*/
@@ -200,6 +225,8 @@ alter table subject_prerequisite add constraint FK_SUBJECT__REFERENCE_SUBJECT_PR
 
 alter table teacher add constraint FK_TEACHER_REFERENCE_DEPARTME foreign key (dprt_id)
       references department (dprt_id) on delete restrict on update restrict;
+      
+drop table if exists password_t;
 
 CREATE TABLE password_t (
     id      INTEGER PRIMARY KEY AUTO_INCREMENT,  -- 改用 id，并设置自动增长
