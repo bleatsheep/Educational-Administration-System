@@ -10,15 +10,102 @@
     <height>555</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,1">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_4" stretch=""/>
+       <layout class="QVBoxLayout" name="verticalLayout_4"/>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_24">
+        <item>
+         <widget class="QLabel" name="label_admin_title">
+          <property name="text">
+           <string>管理员模式</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="listWidget_admin">
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>学院管理</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>专业(系)管理</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>行政班管理</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>学科管理</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>学期管理</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>排课管理</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>学生选课管理</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>学生管理</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>老师管理</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>学生账号管理</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>日志</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>数据库管理</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
        <widget class="QStackedWidget" name="mainUi">
@@ -29,7 +116,7 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>4</number>
         </property>
         <widget class="QWidget" name="login_page">
          <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -57,23 +144,45 @@
                <item>
                 <layout class="QVBoxLayout" name="verticalLayout_10">
                  <item>
-                  <widget class="QLabel" name="label_9">
-                   <property name="font">
-                    <font>
-                     <pointsize>36</pointsize>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(69, 255, 193)</string>
-                   </property>
-                   <property name="text">
-                    <string>教务系统</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignmentFlag::AlignCenter</set>
-                   </property>
-                  </widget>
+                  <layout class="QVBoxLayout" name="verticalLayout_26">
+                   <item>
+                    <widget class="QLabel" name="label_9">
+                     <property name="font">
+                      <font>
+                       <pointsize>36</pointsize>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(69, 255, 193)</string>
+                     </property>
+                     <property name="text">
+                      <string>教务系统</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_role">
+                     <property name="font">
+                      <font>
+                       <pointsize>20</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(69, 255, 193)</string>
+                     </property>
+                     <property name="text">
+                      <string>For Students</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </item>
                  <item>
                   <widget class="QLabel" name="label_3">
@@ -693,7 +802,7 @@ QToolButton:pressed {
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_14">
                 <item>
-                 <widget class="QPushButton" name="log_info_button">
+                 <widget class="QPushButton" name="log_studentinfo_button">
                   <property name="minimumSize">
                    <size>
                     <width>170</width>
@@ -730,136 +839,489 @@ QToolButton:pressed {
          </layout>
         </widget>
         <widget class="QWidget" name="page_teacher_welcome">
-         <layout class="QVBoxLayout" name="verticalLayout_6"/>
-        </widget>
-        <widget class="QWidget" name="page_admin_dashboard">
-         <layout class="QVBoxLayout" name="verticalLayout_5">
+         <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
+           <widget class="QStackedWidget" name="stackedTeacher">
+            <widget class="QWidget" name="teacher_HomePage">
+             <layout class="QVBoxLayout" name="verticalLayout_18">
               <item>
-               <widget class="QLabel" name="label_2">
+               <widget class="QLabel" name="label_4">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>400</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>22</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(0, 98, 255)</string>
+                </property>
                 <property name="text">
-                 <string>学生管理页面</string>
+                 <string>欢迎！</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
               </item>
+              <item alignment="Qt::AlignmentFlag::AlignHCenter">
+               <widget class="QPushButton" name="pushButton_enter">
+                <property name="minimumSize">
+                 <size>
+                  <width>300</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>300</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>进入主界面</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="teacher_main">
+             <layout class="QVBoxLayout" name="verticalLayout_21" stretch="4,1">
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <layout class="QVBoxLayout" name="verticalLayout_20">
                 <item>
-                 <widget class="QLineEdit" name="lineEdit_Search">
-                  <property name="minimumSize">
-                   <size>
-                    <width>100</width>
-                    <height>30</height>
-                   </size>
+                 <widget class="QLabel" name="label_5">
+                  <property name="font">
+                   <font>
+                    <pointsize>22</pointsize>
+                   </font>
                   </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>4000</width>
-                    <height>16777215</height>
-                   </size>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(0, 170, 127)</string>
+                  </property>
+                  <property name="text">
+                   <string>Teacher's Dashboard</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_query">
-                  <property name="minimumSize">
-                   <size>
-                    <width>150</width>
-                    <height>30</height>
-                   </size>
+                 <layout class="QVBoxLayout" name="verticalLayout_22">
+                  <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                   <widget class="QPushButton" name="btn_TeachingCourse">
+                    <property name="minimumSize">
+                     <size>
+                      <width>600</width>
+                      <height>125</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>500</width>
+                      <height>300</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">/* === 1. 默认状态 (静止) === */
+QToolButton {
+    background-color: transparent; /* 背景透明 */
+    border: 1px solid transparent; /* 边框透明占位 */
+    border-radius: 15px;
+    
+    color: #a0a0a0;                /* 浅灰色字体 */
+    
+    font-size: 12pt;               /* 【修改】这里改用 pt，修复报错 */
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* === 2. 鼠标悬浮状态 (Hover) === */
+QToolButton:hover {
+    background-color: transparent; 
+    border: 2px solid #409eff;     /* 悬浮时显示亮蓝色框 */
+    
+    color: #409eff;                /* 悬浮时字体变亮蓝 (适配白底) */
+    /* 如果你的背景是深色的，把上面两个颜色改成 #ffffff (白色) */
+}
+
+/* === 3. 鼠标按下状态 (Pressed) === */
+QToolButton:pressed {
+    background-color: rgba(0, 0, 0, 0.05); /* 按下显示淡淡的灰色阴影 */
+    border: 2px solid #a0a0a0;             /* 边框变灰 */
+    color: #333333;                        /* 字体变深灰 */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>教授课程</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <item>
+                     <spacer name="horizontalSpacer_9">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btn_Grading">
+                      <property name="minimumSize">
+                       <size>
+                        <width>300</width>
+                        <height>125</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>300</width>
+                        <height>125</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">/* === 1. 默认状态 (静止) === */
+QToolButton {
+    background-color: transparent; /* 背景透明 */
+    border: 1px solid transparent; /* 边框透明占位 */
+    border-radius: 15px;
+    
+    color: #a0a0a0;                /* 浅灰色字体 */
+    
+    font-size: 12pt;               /* 【修改】这里改用 pt，修复报错 */
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* === 2. 鼠标悬浮状态 (Hover) === */
+QToolButton:hover {
+    background-color: transparent; 
+    border: 2px solid #409eff;     /* 悬浮时显示亮蓝色框 */
+    
+    color: #409eff;                /* 悬浮时字体变亮蓝 (适配白底) */
+    /* 如果你的背景是深色的，把上面两个颜色改成 #ffffff (白色) */
+}
+
+/* === 3. 鼠标按下状态 (Pressed) === */
+QToolButton:pressed {
+    background-color: rgba(0, 0, 0, 0.05); /* 按下显示淡淡的灰色阴影 */
+    border: 2px solid #a0a0a0;             /* 边框变灰 */
+    color: #333333;                        /* 字体变深灰 */
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>登记成绩</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btn_Info_teacher">
+                      <property name="minimumSize">
+                       <size>
+                        <width>300</width>
+                        <height>125</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>300</width>
+                        <height>125</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">/* === 1. 默认状态 (静止) === */
+QToolButton {
+    background-color: transparent; /* 背景透明 */
+    border: 1px solid transparent; /* 边框透明占位 */
+    border-radius: 15px;
+    
+    color: #a0a0a0;                /* 浅灰色字体 */
+    
+    font-size: 12pt;               /* 【修改】这里改用 pt，修复报错 */
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* === 2. 鼠标悬浮状态 (Hover) === */
+QToolButton:hover {
+    background-color: transparent; 
+    border: 2px solid #409eff;     /* 悬浮时显示亮蓝色框 */
+    
+    color: #409eff;                /* 悬浮时字体变亮蓝 (适配白底) */
+    /* 如果你的背景是深色的，把上面两个颜色改成 #ffffff (白色) */
+}
+
+/* === 3. 鼠标按下状态 (Pressed) === */
+QToolButton:pressed {
+    background-color: rgba(0, 0, 0, 0.05); /* 按下显示淡淡的灰色阴影 */
+    border: 2px solid #a0a0a0;             /* 边框变灰 */
+    color: #333333;                        /* 字体变深灰 */
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>个人信息</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_10">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_10">
+                  <item>
+                   <widget class="QPushButton" name="log_teacherinfo_button">
+                    <property name="minimumSize">
+                     <size>
+                      <width>170</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>已登录</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_admin_dashboard">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QStackedWidget" name="admin_stack">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="currentIndex">
+             <number>5</number>
+            </property>
+            <widget class="QWidget" name="admin_wlecome_page">
+             <layout class="QVBoxLayout" name="verticalLayout_25">
+              <item>
+               <widget class="QLabel" name="label_6">
+                <property name="font">
+                 <font>
+                  <pointsize>24</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(232, 232, 232)</string>
+                </property>
+                <property name="text">
+                 <string>请在左侧菜单栏选择要管理的项目</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="admin_college_manage"/>
+            <widget class="QWidget" name="admin_department_manage"/>
+            <widget class="QWidget" name="admin_adminClass_manage"/>
+            <widget class="QWidget" name="admin_subject_manage"/>
+            <widget class="QWidget" name="admin_semester_manage"/>
+            <widget class="QWidget" name="admin_course_manage"/>
+            <widget class="QWidget" name="admin_courseSelect"/>
+            <widget class="QWidget" name="admin_student_manage">
+             <layout class="QVBoxLayout" name="verticalLayout_23">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_2">
+                  <item>
+                   <widget class="QLabel" name="label_2">
+                    <property name="text">
+                     <string>学生管理页面</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_2">
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_Search">
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>4000</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_query">
+                      <property name="minimumSize">
+                       <size>
+                        <width>150</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>100</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Query</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_more">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>...</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QTableWidget" name="tableWidget">
+                  <property name="columnCount">
+                   <number>3</number>
                   </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>100</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
+                  <column/>
+                  <column/>
+                  <column/>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QPushButton" name="pushButton_add">
                   <property name="text">
-                   <string>Query</string>
+                   <string>添加学生</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_more">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>30</height>
-                   </size>
+                 <widget class="QPushButton" name="pushButton_edit">
+                  <property name="text">
+                   <string>编辑学生信息</string>
                   </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>50</width>
-                    <height>16777215</height>
-                   </size>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_delete">
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 0, 0)</string>
                   </property>
                   <property name="text">
-                   <string>...</string>
+                   <string>删除学生</string>
                   </property>
                  </widget>
                 </item>
                </layout>
               </item>
              </layout>
-            </item>
-            <item>
-             <widget class="QTableWidget" name="tableWidget">
-              <property name="columnCount">
-               <number>3</number>
-              </property>
-              <column/>
-              <column/>
-              <column/>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item>
-             <widget class="QPushButton" name="pushButton_add">
-              <property name="text">
-               <string>添加学生</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_2">
-              <property name="text">
-               <string>编辑学生信息</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_delete">
-              <property name="styleSheet">
-               <string notr="true">color: rgb(255, 0, 0)</string>
-              </property>
-              <property name="text">
-               <string>删除学生</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+            </widget>
+            <widget class="QWidget" name="admin_teacher_manage"/>
+            <widget class="QWidget" name="admin_account_manage"/>
+            <widget class="QWidget" name="admin_checkLogs"/>
+            <widget class="QWidget" name="admin_database_manage"/>
+           </widget>
           </item>
          </layout>
         </widget>
         <widget class="QWidget" name="page_logs">
-         <layout class="QVBoxLayout" name="verticalLayout_8">
-          <item>
-           <widget class="QLabel" name="label_6">
-            <property name="text">
-             <string>日志文件将会显示在此处</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <layout class="QVBoxLayout" name="verticalLayout_8"/>
         </widget>
        </widget>
       </item>

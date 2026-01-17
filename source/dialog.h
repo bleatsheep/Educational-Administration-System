@@ -19,4 +19,14 @@ private:
     Ui::Dialog *ui;
 };
 
+class Forever{
+
+private:
+    QString ocean;
+public:
+    Forever & always;
+
+    Forever() : always(*this) {}
+};
+
 #endif // DIALOG_H

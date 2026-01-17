@@ -22,6 +22,9 @@ set(PROJECT_SOURCES
         dialog.ui
         datamanager.h
         datamanager.cpp
+        consoledialog.h
+        consoledialog.cpp
+        resources.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

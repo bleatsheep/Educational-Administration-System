@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>GitHub_Invertocat_White_Clearspace.png</file>
+    </qresource>
+</RCC>
